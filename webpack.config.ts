@@ -4,49 +4,24 @@
 import path from "path";
 
 // Импорт плагинов
-import HtmlWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
+import { buildWebpackConfig } from "./config/build/buildWebpackConfig";
+import { IBuildPaths } from "./config/build/types/config";
 
-const config: webpack.Configuration = {
-	mode: "development", // development | production
-	// Стартовая точка нашего приложения, влияет на filename: "[name].js"
-	entry: {
-		main: path.resolve(__dirname, "src", "index.ts"), // __dirname - где находимся, далее через запятую передаем пути
-	},
-
-	module: {
-		// Правила для обработки файлов, которые не являются JS файлами (TS, images, css and etc.)
-		rules: [
-			{
-				test: /\.tsx?$/, // Обработка расширений
-				use: "ts-loader", // Лоадер для обработки
-				exclude: /node_modules/, // Исключение
-			},
-		],
-	},
-
-	resolve: {
-		// При импорте позволяет не указывать расширение
-		extensions: [".tsx", ".ts", ".js"],
-	},
-	// Выходной файл
-	output: {
-		filename: "[name].[contenthash].js", // Название выгруженного файла
-		path: path.resolve(__dirname, "dist"), // Куда выгружать
-		clean: true, // Очищает папку dist от мусора
-	},
-
-	// Подключение плагинов
-	plugins: [
-		// Подключение сборки HTML
-		new HtmlWebpackPlugin({
-			// Использование как шаблона
-			template: path.resolve(__dirname, "public", "index.html"),
-		}),
-		// Вывод прогресса сборки
-		new webpack.ProgressPlugin(),
-	],
+const paths: IBuildPaths = {
+	entry: path.resolve(__dirname, "src", "index.ts"),
+	output: path.resolve(__dirname, "dist"),
+	pathHtmlTemplate: path.resolve(__dirname, "public", "index.html"),
 };
+
+const mode = "development";
+const isDev = mode === "development";
+
+const config: webpack.Configuration = buildWebpackConfig({
+	mode: mode,
+	paths,
+	isDev: isDev,
+});
 
 export default config;
 
