@@ -5,24 +5,29 @@ import path from "path";
 
 // Импорт плагинов
 import webpack from "webpack";
-import { buildWebpackConfig } from "./config/build/buildWebpackConfig";
-import { IBuildPaths } from "./config/build/types/config";
+import { buildWebpackConfig } from "./configs/webpack/buildWebpackConfig";
+import { IBuildEnvironment, IBuildPaths } from "./configs/webpack/types/config";
 
-const paths: IBuildPaths = {
-	entry: path.resolve(__dirname, "src", "index.ts"),
-	output: path.resolve(__dirname, "dist"),
-	pathHtmlTemplate: path.resolve(__dirname, "public", "index.html"),
+// Должен быть экспорт ф-и, так как мы принимаем переменные при запуске приложения
+export default (env: IBuildEnvironment) => {
+	const paths: IBuildPaths = {
+		entry: path.resolve(__dirname, "src", "index.ts"),
+		output: path.resolve(__dirname, "dist"),
+		pathHtmlTemplate: path.resolve(__dirname, "public", "index.html"),
+	};
+
+	const MODE = env.mode || "development";
+	const isDev = MODE === "development";
+	const PORT = env.port || 3000;
+
+	const config: webpack.Configuration = buildWebpackConfig({
+		mode: MODE,
+		paths,
+		isDev: isDev,
+		port: PORT,
+	});
+
+	return config;
 };
-
-const mode = "development";
-const isDev = mode === "development";
-
-const config: webpack.Configuration = buildWebpackConfig({
-	mode: mode,
-	paths,
-	isDev: isDev,
-});
-
-export default config;
 
 // module.exports - аналог обычно exports, но для nodejs
