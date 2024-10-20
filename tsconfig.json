@@ -4,7 +4,7 @@
 		"noImplicitAny": true, // Явное указание типов
 		"module": "ESNext", // Какой модуль мы будем использовать
 		"target": "es5", // В какой версию JS мы будем компилировать
-		"jsx": "react", // Какой JSX мы будем использовать
+		"jsx": "react-jsx", // Какой JSX мы будем использовать | react-jsx - Позвоялет не импортить React в каждый файл
 		"allowJs": true, // Позволяет компилятору обрабатывать не только TS, но и JS файлы
 		"moduleResolution": "node", // То, какие импорты будут
 		"allowSyntheticDefaultImports": true,
