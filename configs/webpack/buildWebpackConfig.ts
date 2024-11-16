@@ -25,7 +25,7 @@ export function buildWebpackConfig(options: IBuildOptions): webpack.Configuratio
 		plugins: buildPlugins({ pathHtmlTemplate: paths.pathHtmlTemplate }),
 		module: {
 			// Правила для обработки файлов, которые не являются JS файлами (TS, images, css and etc.)
-			rules: buildLoaders(),
+			rules: buildLoaders(options),
 		},
 		resolve: buildResolvers(),
 		devtool: isDev ? "inline-source-map" : undefined, // "inline-source-map" - Для вывод ошибок в конкретных файлах
