@@ -7,11 +7,12 @@ import { AboutPageLazy } from "./pages/AboutPage/AboutPage lazy";
 import { MainPageLazy } from "./pages/MainPage/MainPage lazy";
 import { ThemeContext, ThemeEnum } from "./theme/ThemeContext";
 import { useTheme } from "./theme/useTheme";
+import { clsx } from "./helpers/clsx";
 
 export const App = () => {
 	const { theme, toggleTheme } = useTheme();
 	return (
-		<div className={`app ${theme}`}>
+		<div className={clsx("app", {}, [theme, "hello"])}>
 			<button onClick={toggleTheme}>TOGGLE</button>
 			<Link to={"/"}>Main</Link>
 			<Link to={"/about"}>About</Link>
