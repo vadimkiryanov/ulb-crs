@@ -14,6 +14,7 @@ export default (env: IBuildEnvironment) => {
 		entry: path.resolve(__dirname, "src", "index.tsx"),
 		output: path.resolve(__dirname, "dist"),
 		pathHtmlTemplate: path.resolve(__dirname, "public", "index.html"),
+		src: path.resolve(__dirname, "src"),
 	};
 
 	const MODE = env.mode || "development";

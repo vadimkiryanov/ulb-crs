@@ -27,7 +27,7 @@ export function buildWebpackConfig(options: IBuildOptions): webpack.Configuratio
 			// Правила для обработки файлов, которые не являются JS файлами (TS, images, css and etc.)
 			rules: buildLoaders(options),
 		},
-		resolve: buildResolvers(),
+		resolve: buildResolvers(options),
 		devtool: isDev ? "inline-source-map" : undefined, // "inline-source-map" - Для вывод ошибок в конкретных файлах
 		devServer: isDev ? buildDevServer(options) : undefined, // devServer - Запуск приложения локально
 	};

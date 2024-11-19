@@ -9,7 +9,10 @@
 		"moduleResolution": "node", // То, какие импорты будут
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": true,
-    // "baseUrl": "." // Для абсолютных импортов
+    "baseUrl": ".", // Для абсолютных импортов
+    "paths": {
+      "@/*": ["./src/*"]
+    }
 	},
   // Для поддержки других модулей
 	"ts-node": {

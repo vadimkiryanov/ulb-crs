@@ -3,11 +3,10 @@ import React, { Suspense, useContext, useState } from "react";
 import "./styles/index.scss";
 import { Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { AboutPageLazy } from "./pages/AboutPage/AboutPage lazy";
-import { MainPageLazy } from "./pages/MainPage/MainPage lazy";
-import { ThemeContext, ThemeEnum } from "./theme/ThemeContext";
-import { useTheme } from "./theme/useTheme";
-import { clsx } from "./helpers/clsx";
+import { useTheme } from "@/app/providers/ThemeProvider";
+import { AboutPageLazy } from "@/pages/AboutPage";
+import { MainPageLazy } from "@/pages/MainPage";
+import { clsx } from "@/shared/lib/clsx";
 
 export const App = () => {
 	const { theme, toggleTheme } = useTheme();
