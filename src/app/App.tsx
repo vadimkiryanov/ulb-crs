@@ -1,8 +1,8 @@
 import "./styles/index.scss";
 import { Link } from "react-router-dom";
-import { useTheme } from "@/app/providers/ThemeProvider";
 import { clsx } from "@/shared/lib/clsx";
 import { RouterProvider } from "./providers/router";
+import { useTheme } from "./providers/theme";
 
 export const App = () => {
 	const { theme, toggleTheme } = useTheme();
