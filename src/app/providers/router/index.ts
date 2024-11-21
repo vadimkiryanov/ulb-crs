@@ -1,1 +1,1 @@
-export { RouterProvider } from "./ui/RouterProvider";
+export { AppRouter } from "./ui/AppRouter";

@@ -1,17 +1,17 @@
 import "./styles/index.scss";
-import { Link } from "react-router-dom";
-import { clsx } from "@/shared/lib/clsx";
-import { RouterProvider } from "./providers/router";
+import { classNames } from "@/shared/lib/classNames";
+import { AppRouter } from "./providers/router";
 import { useTheme } from "./providers/theme";
+import { Navbar } from "@/widgets/Navbar";
 
 export const App = () => {
 	const { theme, toggleTheme } = useTheme();
+
 	return (
-		<div className={clsx("app", {}, [theme, "hello"])}>
+		<div className={classNames("app", {}, [theme, "hello"])}>
+			<Navbar />
+			<AppRouter />
 			<button onClick={toggleTheme}>TOGGLE</button>
-			<Link to={"/"}>Main</Link>
-			<Link to={"/about"}>About</Link>
-			<RouterProvider />
 		</div>
 	);
 };

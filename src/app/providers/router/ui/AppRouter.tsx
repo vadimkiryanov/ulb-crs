@@ -3,7 +3,7 @@ import { MainPageLazy } from "@/pages/MainPage";
 import { Suspense } from "react";
 import { useRoutes } from "react-router-dom";
 
-export const RouterProvider = () => {
+export const AppRouter = () => {
 	return (
 		<Suspense fallback={<div>Loading...</div>}>
 			<Routes />
