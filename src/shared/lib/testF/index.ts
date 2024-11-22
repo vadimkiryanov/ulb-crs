@@ -1,3 +1,3 @@
 export const testF = () => {
-	console.log("HELLO");
+	alert("HELLO");
 };

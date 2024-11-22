@@ -9,8 +9,8 @@ const AboutPage = () => {
 	};
 	return (
 		<>
-			<Button onClick={onClick} theme={ThemeButtonEnum.CLEAR}>
-				hello console
+			<Button onClick={onClick} theme={ThemeButtonEnum.CLEAR} style={{ boxShadow: "0px 0px 4px 1px" }}>
+				alert btn
 			</Button>
 			<div>AboutPage</div>
 		</>
