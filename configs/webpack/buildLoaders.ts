@@ -4,6 +4,20 @@ import { IBuildOptions } from "./types/config";
 
 // Лоадеры позволяют webpack обрабатывать не только JavaScript файлы, но и другие типы файлов (CSS, изображения, шрифты и т.д.).
 export function buildLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
+	const fileLoader = {
+		test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+		use: [
+			{
+				loader: "file-loader",
+			},
+		],
+	};
+
+	const svgLoader = {
+		test: /\.svg$/,
+		use: ["@svgr/webpack"],
+	};
+
 	const cssLoader = {
 		test: /\.s[ac]ss$/i, // Регулярное выражение для обработки файлов с расширением .sass и .scss
 		use: [
@@ -38,5 +52,5 @@ export function buildLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
 		exclude: /node_modules/, // Исключение
 	};
 
-	return [typescriptLoader, cssLoader];
+	return [typescriptLoader, cssLoader, svgLoader, fileLoader];
 }

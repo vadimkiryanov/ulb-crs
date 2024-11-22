@@ -1,3 +1,4 @@
+import { Button, ThemeButtonEnum } from "@/shared/ui/Button";
 import React from "react";
 
 const AboutPage = () => {
@@ -8,7 +9,9 @@ const AboutPage = () => {
 	};
 	return (
 		<>
-			<button onClick={onClick}>hello console</button>
+			<Button onClick={onClick} theme={ThemeButtonEnum.CLEAR}>
+				hello console
+			</Button>
 			<div>AboutPage</div>
 		</>
 	);
