@@ -3,6 +3,7 @@ import { classNames } from "@/shared/lib/classNames";
 import * as cls from "./Sidebar.module.scss";
 import { ThemeSwitcher } from "@/widgets/ThemeSwitcher";
 import { Button, ThemeButtonEnum } from "@/shared/ui/Button";
+import { LangSwitcher } from "@/widgets/LangSwitcher";
 
 export const Sidebar: FC<ISidebarProps> = ({ className, ...props }) => {
 	const [collapsed, setCollapsed] = useState(false);
@@ -18,7 +19,7 @@ export const Sidebar: FC<ISidebarProps> = ({ className, ...props }) => {
 			</Button>
 			<div className={cls.switchers}>
 				<ThemeSwitcher />
-				{/* lang switcher */}
+				<LangSwitcher />
 			</div>
 		</div>
 	);

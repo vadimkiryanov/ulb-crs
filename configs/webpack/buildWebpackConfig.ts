@@ -22,7 +22,7 @@ export function buildWebpackConfig(options: IBuildOptions): webpack.Configuratio
 		},
 
 		// Подключение плагинов
-		plugins: buildPlugins({ pathHtmlTemplate: paths.pathHtmlTemplate }),
+		plugins: buildPlugins(options),
 		module: {
 			// Правила для обработки файлов, которые не являются JS файлами (TS, images, css and etc.)
 			rules: buildLoaders(options),
