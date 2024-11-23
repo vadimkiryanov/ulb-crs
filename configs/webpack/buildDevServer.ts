@@ -9,5 +9,6 @@ export function buildDevServer(options: IBuildOptions): DevServerConfiguration {
 		open: true,
 		// Перенаправление всех запросов к корневому файлу (index.html) для поддержки истории API
 		historyApiFallback: true,
+		hot: true,
 	};
 }
