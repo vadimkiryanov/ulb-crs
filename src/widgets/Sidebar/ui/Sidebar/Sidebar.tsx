@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { classNames } from "@/shared/lib/classNames";
 import * as cls from "./Sidebar.module.scss";
 import { ThemeSwitcher } from "@/widgets/ThemeSwitcher";
@@ -12,10 +12,14 @@ export const Sidebar: FC<ISidebarProps> = ({ className, ...props }) => {
 		setCollapsed((prev) => !prev);
 	};
 
+	useEffect(() => {
+		console.log({ collapsed });
+	}, []);
+
 	return (
 		<div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])} {...props}>
-			<Button onClick={onToggle} theme={ThemeButtonEnum.CLEAR}>
-				toggle
+			<Button onClick={onToggle} theme={ThemeButtonEnum.CLEAR} className={cls.collapseBtn}>
+				{collapsed ? ">" : "<"}
 			</Button>
 			<div className={cls.switchers}>
 				<ThemeSwitcher />

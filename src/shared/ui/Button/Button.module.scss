@@ -1,20 +1,17 @@
 .Button {
-	cursor: pointer;
-
-	color: var(--primary-color);
-	background-color: var(--bg-color);
-	fill: var(--inverted-bg-color);
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    cursor: pointer;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    fill: var(--inverted-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .clear {
-	border: none;
-	outline: none;
-
-	padding: 6px;
-	border-radius: 8px;
-	transition: all 0.2s;
+    border: none;
+    outline: none;
+    padding: 6px;
+    border-radius: 8px;
+    transition: all 0.2s;
 }
