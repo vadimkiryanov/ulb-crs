@@ -1,5 +1,6 @@
 import { AboutPageLazy } from "@/pages/AboutPage";
 import { MainPageLazy } from "@/pages/MainPage";
+import { NotFoundPageLazy } from "@/pages/NotFoundPage";
 import { RouteProps } from "react-router-dom";
 // Конфигурация маршрутов приложения
 
@@ -7,11 +8,13 @@ import { RouteProps } from "react-router-dom";
 enum AppRoutes {
 	MAIN = "main",
 	ABOUT = "about",
+	NOT_FOUND = "not_found",
 }
 // Объект, сопоставляющий маршруты с их путями
 const RoutePath: Record<AppRoutes, string> = {
 	[AppRoutes.MAIN]: "/",
 	[AppRoutes.ABOUT]: "/about",
+	[AppRoutes.NOT_FOUND]: "*",
 };
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
@@ -22,5 +25,9 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
 	[AppRoutes.ABOUT]: {
 		path: RoutePath.about,
 		element: <AboutPageLazy />,
+	},
+	[AppRoutes.NOT_FOUND]: {
+		path: RoutePath.not_found,
+		element: <NotFoundPageLazy />,
 	},
 };
