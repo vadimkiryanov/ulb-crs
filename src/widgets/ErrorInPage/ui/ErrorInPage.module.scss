@@ -1,0 +1,10 @@
+.ErrorInPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: var(--font-l);
+    height: 100vh;
+    flex-direction: column;
+    gap: 20px;
+}
+

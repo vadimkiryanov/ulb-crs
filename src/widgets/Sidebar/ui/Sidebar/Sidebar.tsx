@@ -12,10 +12,6 @@ export const Sidebar: FC<ISidebarProps> = ({ className, ...props }) => {
 		setCollapsed((prev) => !prev);
 	};
 
-	useEffect(() => {
-		console.log({ collapsed });
-	}, []);
-
 	return (
 		<div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])} {...props}>
 			<Button onClick={onToggle} theme={ThemeButtonEnum.CLEAR} className={cls.collapseBtn}>
