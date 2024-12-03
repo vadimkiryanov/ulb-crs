@@ -11,6 +11,7 @@ export function buildPlugins({ paths, isDev }: IBuildOptions): webpack.WebpackPl
 		new HtmlWebpackPlugin({
 			// Использование как шаблона
 			template: paths.pathHtmlTemplate,
+			favicon: "./public/favicon.png",
 		}),
 		// Вывод прогресса сборки
 		new webpack.ProgressPlugin(),
