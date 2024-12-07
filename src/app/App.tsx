@@ -16,7 +16,7 @@ export const App = () => {
 		<div className={classNames("app", {}, [theme])}>
 			<Suspense fallback={<div>{t("zagruzka")}</div>}>
 				<Navbar />
-				<div className="content-page">
+				<div className="contentPage">
 					<Sidebar />
 					<AppRouter />
 				</div>

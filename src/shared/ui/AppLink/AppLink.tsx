@@ -1,13 +1,13 @@
 import { classNames } from "@/shared/lib/classNames";
 import React, { FC, PropsWithChildren } from "react";
 import { Link, LinkProps } from "react-router-dom";
-import * as cls from "./AppLink.module.scss";
+import cls from "./AppLink.module.scss";
 
 export const AppLink: FC<IAppLinkProps & PropsWithChildren> = (props) => {
 	const { className, children, theme = AppLinkTheme.PRIMARY, ...otherProps } = props;
 
 	return (
-		<Link className={classNames(cls.AppLink, {}, [className, cls[theme]])} {...otherProps}>
+		<Link className={classNames(cls.appLink, {}, [className, cls[theme]])} {...otherProps}>
 			{children}
 		</Link>
 	);

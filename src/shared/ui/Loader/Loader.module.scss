@@ -1,4 +1,4 @@
-.Loader {
+.loader {
     width: 48px;
     height: 40px;
     margin-top: 30px;
@@ -8,7 +8,7 @@
     border-radius: 15% 15% 35% 35%;
 }
 
-.Loader::after {
+.loader::after {
     content: '';  
     box-sizing: border-box;
     position: absolute;
@@ -20,7 +20,7 @@
     border-radius: 0 4px 4px 0;
 }
 
-.Loader::before {
+.loader::before {
     content: '';  
     position: absolute;
     width: 1px;

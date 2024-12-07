@@ -12,7 +12,7 @@ export const AppRouter = () => {
 					path={config.path}
 					element={
 						<Suspense fallback={<PageLoader />}>
-							<div className="page-wrapper">{config.element}</div>
+							<div className="pageWrapper">{config.element}</div>
 						</Suspense>
 					}
 				/>

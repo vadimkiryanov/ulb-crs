@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { classNames } from "@/shared/lib/classNames";
-import * as cls from "./Sidebar.module.scss";
+import cls from "./Sidebar.module.scss";
 import { ThemeSwitcher } from "@/widgets/ThemeSwitcher";
 import { Button, ThemeButtonEnum } from "@/shared/ui/Button";
 import { LangSwitcher } from "@/widgets/LangSwitcher";
@@ -13,7 +13,7 @@ export const Sidebar: FC<ISidebarProps> = ({ className, ...props }) => {
 	};
 
 	return (
-		<div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])} {...props}>
+		<div className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])} {...props}>
 			<Button onClick={onToggle} theme={ThemeButtonEnum.CLEAR} className={cls.collapseBtn}>
 				{collapsed ? ">" : "<"}
 			</Button>

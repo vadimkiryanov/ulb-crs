@@ -35,7 +35,8 @@ export function buildLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
 						// В режиме разработки (isDev) он включает путь и имя файла для удобства отладки
 						// В продакшен режиме используется хэш для минимизации размера
 						localIdentName: isDev ? "[path][name]__[local]--[hash:base64:5]" : "[hash:base64:8]",
-						// namedExport: false, // (опционально) отключает именованные экспорты
+						namedExport: false, // (опционально) отключает именованные экспорты
+						exportLocalsConvention: "camel-case-only",
 					},
 				},
 			}, // Преобразует CSS в CommonJS
