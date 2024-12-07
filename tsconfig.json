@@ -9,15 +9,17 @@
 		"moduleResolution": "node", // То, какие импорты будут
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": true,
-    "baseUrl": ".", // Для абсолютных импортов
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+		"baseUrl": ".", // Для абсолютных импортов
+		"paths": {
+			"@/*": ["./src/*"]
+		}
 	},
-  // Для поддержки других модулей
+	// Для поддержки других модулей
 	"ts-node": {
 		"compilerOptions": {
 			"module": "CommonJS"
 		}
 	}
+
+	// "include": ["./configs/jest/setupTests.ts"]
 }
