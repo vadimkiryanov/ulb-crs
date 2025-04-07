@@ -18,4 +18,5 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export enum ThemeButtonEnum {
 	CLEAR = "clear",
 	SECONDARY = "secondary",
+	OUTLINE = "outline",
 }

@@ -16,6 +16,12 @@
     transition: all 0.2s;
 }
 
+.outline {
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 10px 14px;
+}
+
 .hello{
     color: red;
 }

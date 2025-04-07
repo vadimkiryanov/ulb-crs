@@ -27,7 +27,7 @@ export default [
 		rules: {
 			"i18next/no-literal-string": ["error", { markupOnly: true }],
 			"react/react-in-jsx-scope": "off",
-			"@typescript-eslint/no-unused-vars": "warn",
+			"@typescript-eslint/no-unused-vars": "error",
 			"react-hooks/rules-of-hooks": "error",
 			"react-hooks/exhaustive-deps": "warn",
 			// "react/jsx-indent": [2, 4],
