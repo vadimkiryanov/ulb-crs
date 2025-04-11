@@ -3,16 +3,18 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"unit": "jest --config configs/jest/jest.config.ts",
-		"start:dev": "webpack serve --env port=3000",
+        "start:dev": "webpack serve --env port=3000",
 		"build:dev": "webpack --env mode=development",
 		"build:prod": "webpack --env mode=production",
 		"eslint:ts": "eslint \"**/*.{ts,tsx}\" --fix",
 		"eslint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
 		"stylelint:scss": "npx stylelint \"**/*.scss\"",
 		"stylelint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
+		"test:unit": "jest --config configs/jest/jest.config.ts",
+		"test:ui": "npx loki test",
+		"test:ui:ok": "npx loki approve",
 		"storybook": "storybook dev -p 6006 -c ./configs/storybook",
-		"build-storybook": "storybook build -c ./configs/storybook"
+		"storybook-build": "storybook build -c ./configs/storybook"
 	},
 	"keywords": [],
 	"author": "",
