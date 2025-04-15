@@ -30,3 +30,7 @@ jobs:
         run: npm run stylelint:scss
       - name: Тесты:unit
         run: npm run test:unit
+      - name: Storybook сборка
+        run: npm run storybook:build
+      - name: Тесты:скриншотные
+        run: npm run test:ui:ci
