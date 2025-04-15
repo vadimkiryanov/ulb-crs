@@ -6,7 +6,7 @@ import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 export function buildPlugins({ paths, isDev }: IBuildOptions): webpack.WebpackPluginInstance[] {
-	return [
+	const plugins = [
 		// Подключение сборки HTML
 		new HtmlWebpackPlugin({
 			// Использование как шаблона
@@ -28,13 +28,19 @@ export function buildPlugins({ paths, isDev }: IBuildOptions): webpack.WebpackPl
 
 		// Плагин для поддержки горячей перезагрузки компонентов React
 		new ReactRefreshWebpackPlugin(),
-
-		// Плагин для поддержки горячей замены модулей (HMR)
-		new webpack.HotModuleReplacementPlugin(),
-
-		// Плагин для анализа бандлов и их размера
-		new BundleAnalyzerPlugin({
-			openAnalyzer: false, // отключаем автоматическое открытие анализатора
-		}),
 	];
+
+	if (isDev) {
+		plugins.push(
+			// Плагин для поддержки горячей замены модулей (HMR)
+			new webpack.HotModuleReplacementPlugin(),
+
+			// Плагин для анализа бандлов и их размера
+			new BundleAnalyzerPlugin({
+				openAnalyzer: false, // отключаем автоматическое открытие анализатора
+			})
+		);
+	}
+
+	return plugins;
 }
